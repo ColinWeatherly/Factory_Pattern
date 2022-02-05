@@ -1,5 +1,5 @@
 ﻿/* Name: Colin Weatherly
- * Date: 2/4/2022
+ * Date: 2/5/2022
  * File: Program.cs
  * IDE: Visual Studio 2019
  */
@@ -13,9 +13,9 @@ namespace Factory_Pattern
         static void Main()
         {
             ShapeFactory factory = new ShapeFactory();
-            for (ShapeFactory.ShapeType test = ShapeFactory.ShapeType.LINE; test <= ShapeFactory.ShapeType.TRIANGLE; test++)
+            for (ShapeType test = ShapeType.LINE; test <= ShapeType.TRIANGLE; test++)
             {
-                GeometricShape shape = factory.getShape(test);
+                IGeometricShape shape = factory.getShape(test);
                 if (shape != null)
                 {
                     shape.draw();

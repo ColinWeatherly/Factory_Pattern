@@ -1,5 +1,5 @@
 ﻿/* Name: Colin Weatherly
- * Date: 2/4/2022
+ * Date: 2/5/2022
  * File: ShapeFactory.cs
  * IDE: Visual Studio 2019
  */
@@ -10,17 +10,18 @@ using System.Text;
 
 namespace Factory_Pattern
 {
-    class ShapeFactory
+    public enum ShapeType
     {
-        public enum ShapeType
-        {
-            LINE,
-            CIRCLE,
-            RECTANGLE,
-            TRIANGLE
-        }
+        LINE,
+        CIRCLE,
+        RECTANGLE,
+        TRIANGLE
+    }
 
-        public GeometricShape getShape(ShapeType type)
+    public class ShapeFactory
+    {
+
+        public IGeometricShape getShape(ShapeType type)
         {
             switch (type)
             {
